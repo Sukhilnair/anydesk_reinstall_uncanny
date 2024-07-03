@@ -16,6 +16,8 @@ curl -k "https://monitor.uncannysurveillance.com/dm/api/dm/v1/device/$aikaan_id"
   --data-raw "{\"name\":\"$aikaan_name\",\"desc\":\"Anydesk: $anydesk_id\"}" \
   --compressed
   
+sudo wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.13_amd64.deb
 sudo ln -s /usr/lib/x86_64-linux-gnu/libjsoncpp.so.25 /usr/lib/x86_64-linux-gnu/libjsoncpp.so.1
 sudo dpkg -i lib*
 sudo apt-get install libjsoncpp-dev -y
+
