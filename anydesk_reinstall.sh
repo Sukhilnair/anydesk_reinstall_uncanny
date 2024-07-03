@@ -8,6 +8,7 @@ apt-get install anydesk -y
 echo admin@123 | sudo anydesk --set-password
 anydesk_id=`sudo anydesk --get-id`
 sleep 10
+aikaan_name=`cat /opt/aikaan/etc/telegraf.conf | grep devicename= | cut -d '=' -f 2 | tr -d '"'`
 aikaan_id=`cat /opt/aikaan/etc/aiagent_config.json | jq -r '.DeviceId'`
 token=`curl -k 'https://monitor.uncannysurveillance.com/api/_external/auth/v1/signin' --data-raw '{"email":"uncannyvision@aikaan.io","password":"uncannyvision@123456"}' | jq -r ".data.token"`
 curl -k "https://monitor.uncannysurveillance.com/dm/api/dm/v1/device/$aikaan_id" \
